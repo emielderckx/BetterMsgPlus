@@ -18,20 +18,20 @@ public class TellCommand implements CommandExecutor, TabCompleter {
 
         if (args.length < 1) {
             if (label.equalsIgnoreCase("tell"))
-                sender.sendMessage(ChatColor.RED + "No player name was entered. Correct usage: /tell <player-name> <message>");
+                sender.sendMessage(ChatColor.GRAY + "[Server] No player name was entered. Correct usage: /tell <player> <message>.");
             else
-                sender.sendMessage(ChatColor.RED + "No player name was entered. Correct usage: /msg <player-name> <message>");
+                sender.sendMessage(ChatColor.GRAY + "[Server] No player name was entered. Correct usage: /msg <player> <message>.");
             return true;
         }
 
         if (args.length < 2) {
-            sender.sendMessage(ChatColor.RED + "No message was entered !");
+            sender.sendMessage(ChatColor.GRAY + "[Server] No message was entered.");
             return true;
         }
 
         Player to = Bukkit.getPlayerExact(args[0]);
         if (to == null) {
-            sender.sendMessage(ChatColor.RED + "No Player Found !");
+            sender.sendMessage(ChatColor.GRAY + "[Server] No Player Found.");
             return true;
         }
 
